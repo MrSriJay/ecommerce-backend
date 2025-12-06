@@ -111,6 +111,5 @@ backend/
 ││
 ├── .env.example                       # DB credentials template
 ├── README.md                          # Detailed backend docs (see below)
-└── vercel.json                        # Makes NestJS work perfectly on Vercel
 
 ```

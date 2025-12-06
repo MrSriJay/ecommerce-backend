@@ -9,7 +9,7 @@ async function bootstrap() {
 
   // CORS — THIS IS THE MOST IMPORTANT LINE FOR VERCEL
   app.enableCors({
-    origin: true,                
+    origin: '*',            
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
