@@ -18,10 +18,15 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "vercel-build": "nest build",
-    "dev": "nest start --watch"
+    "vercel-build": "npm run build"
   },
-  "main": "dist/main.js",
+  "vercel": {
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
