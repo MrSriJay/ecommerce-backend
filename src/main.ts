@@ -28,12 +28,20 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document, {
-  swaggerOptions: {
-    persistAuthorization: true,
-  },
-  customCss: '.swagger-ui .topbar { background-color: #1e293b; }',
-  customJs: ['https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-bundle.js'],
-});
+    swaggerOptions: {
+      persistAuthorization: true,
+      tagsSorter: 'alpha',
+      operationsSorter: 'alpha',
+    },
+    customSiteTitle: 'Order Management API Docs',
+    customCss: '.swagger-ui .topbar { background-color: #1e293b; }',
+    customJs: [
+      'https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-bundle.js',
+      'https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-standalone-preset.js',
+    ],
+    customCssUrl: 'https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui.css',
+  });
+
 
   // Listen on Vercel or local port
   const port = process.env.PORT || 3000;
