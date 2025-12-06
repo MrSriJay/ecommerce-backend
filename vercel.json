@@ -2,14 +2,24 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "src": "dist/main.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/dist/main.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/dist/main.js"
     }
-  ]
+  ],
+  "functions": {
+    "dist/main.js": {
+      "maxDuration": 60
+    }
+  }
 }
