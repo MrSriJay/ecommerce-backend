@@ -55,7 +55,7 @@ DELETE /api/orders/:id       → Delete order + cascade cleanup
 GET    /api/products         → List all products
 POST   /api/products         → Create new product
 PUT    /api/products/:id     → Update product
-DELETE /api/products/:id     → Delete produc
+DELETE /api/products/:id     → Delete product
 ```
 
 ## Project Structure
