@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/docs",
-      "destination": "/swagger-ui/index.html"
-    }
-  ]
-}
