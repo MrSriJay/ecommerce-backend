@@ -1,1 +1,8 @@
-{ "version": 2, "builds": [ { "src": "server.js", "use": "@vercel/node", "config": { "includeFiles": ["docs/**"] } } ], "rewrites": [ { "source": "/(.*)", "destination": "/server.js" } ] }
+{
+  "rewrites": [
+    {
+      "source": "/api/docs/(.*)",
+      "destination": "/swagger-ui/$1"
+    }
+  ]
+}
