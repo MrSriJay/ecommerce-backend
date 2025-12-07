@@ -3,7 +3,7 @@
   <a href="https://nextjs.org/" target="blank"><img src="https://assets.vercel.com/image/upload/v1662131169/nextjs/Icon_dark_background.png" width="100" alt="Next.js Logo" /></a>
 </p>
 
-<h1 align="center">E-Commerce Order Management System</h1>
+<h1 align="center">E-Commerce Order Management System — Backend</h1>
 
 <p align="center">
   Full-Stack Coding Challenge • <strong>NestJS + Next.js 14 + PostgreSQL + TailwindCSS</strong>
@@ -19,7 +19,7 @@
 </p>  
 
 <p align="center">
-  <a href="https://ecommerce-backend-eta-sandy.vercel.app/api/docs#"><img src="https://img.shields.io/badge/Swagger%20API-Docs-blueviolet?style=for-the-badge&logo=swagger" alt="Swagger Docs"></a>
+  <a href="https://ecommerce-backend-eta-sandy.vercel.app/api/docs#" target="_blank"><img src="https://img.shields.io/badge/Swagger%20API-Docs-blueviolet?style=for-the-badge&logo=swagger" alt="Swagger Docs"></a>
 </p>
 
 ---
