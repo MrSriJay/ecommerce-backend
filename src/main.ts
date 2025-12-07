@@ -22,6 +22,15 @@ async function bootstrap() {
     .setTitle('E-Commerce Order Management API')
     .setDescription('Full Stack Coding Test — NestJS + React + PostgreSQL')
     .setVersion('1.0')
+    .addTag('auth', 'Authentication endpoints')
+    .addBearerAuth(  
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'access-token', 
+    )
     .addTag('orders', 'Order CRUD operations')
     .addTag('products', 'Product catalog')
     .build();

@@ -5,7 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OrderModule } from './order/order.module';
 import { ProductModule } from './product/product.module';
-
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     // Load .env.local explicitly
@@ -33,7 +33,7 @@ import { ProductModule } from './product/product.module';
       }),
     }),
     
-
+    AuthModule,
     OrderModule,
     ProductModule,
   ],
