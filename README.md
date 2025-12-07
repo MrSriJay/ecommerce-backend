@@ -15,16 +15,16 @@
   <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" />
-</p>
-
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white" />
+</p>  
 
 <p align="center">
-  <a href="https://ecommerce-backend-p8njnbhyv-jayanga-palihenas-projects.vercel.app/api/docs"><img src="https://img.shields.io/badge/Swagger%20API-Docs-blueviolet?style=for-the-badge&logo=swagger" alt="Swagger Docs"></a>
+  <a href="https://ecommerce-backend-eta-sandy.vercel.app/api/docs#"><img src="https://img.shields.io/badge/Swagger%20API-Docs-blueviolet?style=for-the-badge&logo=swagger" alt="Swagger Docs"></a>
 </p>
 
 ---
 
-
+## Features Implemented
 
 ## Features Implemented
 
@@ -38,9 +38,40 @@
 | Safe DELETE (prevents foreign key violation)  | ✅ Done | Manual cleanup of mapping table before delete |
 | Clean, reusable, testable code                | ✅ Done | Modular architecture, DTOs, services, error handling |
 | Swagger/OpenAPI documentation                 | ✅ Done | Fully interactive docs |
-| Deployment on Vercel                           | ✅ Done | Serverless deployment |
+| Deployment on Vercel                          | ✅ Done | Serverless deployment |
 | Real hosted PostgreSQL                        | ✅ Done | Aiven Cloud (production-grade) |
+| JWT Authentication                       | ✅ Done | Secure login and access control using JWT |
 
+---
+
+## Authentication
+
+This backend API uses **JWT (JSON Web Token)** for authentication. The login endpoint allows users to authenticate and receive a JWT token that must be included in the headers for subsequent API requests.
+
+### Authentication Endpoints
+
+```http
+POST   /api/auth/login     → Login with username and password and receive JWT token
+POST   /api/auth/register  → Register a new user (admin endpoint)
+```
+
+## Example Request: Login
+
+To log in, send a POST request to `/api/auth/login` with the following JSON body:
+
+```json
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+```
+Response:
+
+```json
+{
+  "access_token": "your-jwt-token-here"
+}
+```
 
 ---
 
@@ -56,12 +87,13 @@ GET    /api/products         → List all products
 POST   /api/products         → Create new product
 PUT    /api/products/:id     → Update product
 DELETE /api/products/:id     → Delete product
+POST   /api/auth/login       → Authenticate and receive JWT token
+POST   /api/auth/register    → Register a new user
 ```
 
 ## Project Structure
 
-```http
-
+```file
 ecommerce-backend/
 ├── src/
 │   ├── order/
@@ -83,7 +115,18 @@ ecommerce-backend/
 │   │   ├── product.service.ts
 │   │   └── product.module.ts
 │   │
-│   ├── app.module.ts                   # Root module importing OrderModule, ProductModule
+│   ├── auth/
+│   │   ├── dto/
+│   │   │   ├── login.dto.ts             # Login DTO for authentication
+│   │   │   └── register.dto.ts          # Register DTO for creating new users
+│   │   ├── entities/
+│   │   │   └── user.entity.ts           # User entity with username and password
+│   │   ├── auth.controller.ts           # REST API endpoints for authentication
+│   │   ├── auth.service.ts              # JWT authentication logic
+│   │   ├── jwt.strategy.ts              # JWT validation and strategy
+│   │   └── auth.module.ts               # Module for authentication
+│   │
+│   ├── app.module.ts                   # Root module importing OrderModule, ProductModule, AuthModule
 │
 ├── .env.example                        # Database credentials template
 ├── README.md                           # Project documentation
