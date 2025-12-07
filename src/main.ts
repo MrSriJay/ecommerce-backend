@@ -9,7 +9,7 @@ async function bootstrap() {
 
   // CORS — THIS IS THE MOST IMPORTANT LINE FOR VERCEL
   app.enableCors({
-    origin: 'https://ecommerce-frontend-brown-eight.vercel.app/',            
+    origin: true,            
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
