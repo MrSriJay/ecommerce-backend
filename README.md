@@ -26,8 +26,6 @@
 
 ## Features Implemented
 
-## Features Implemented
-
 | Requirement                                   | Status | Implementation |
 |-----------------------------------------------|--------|----------------|
 | `ORDERS` table (`id`, `orderDescription`, `createdAt`) | ✅ Done | SERIAL PK, TIMESTAMP |
